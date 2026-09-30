@@ -1,0 +1,17 @@
+.intro-main { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
+.spark { font-size: 1.6rem; color: var(--gold); }
+
+.explore {
+  background: none;
+  border: none;
+  color: var(--star);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
+.explore:focus-visible { outline: 1px solid var(--gold); outline-offset: 6px; }
+.arrow { font-size: 1.8rem; animation: bob 2s ease-in-out infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }

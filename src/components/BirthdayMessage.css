@@ -1,0 +1,32 @@
+.message { display: flex; flex-direction: column; align-items: center; gap: 2rem; width: 100%; }
+
+.card {
+  position: relative;
+  width: min(90vw, 420px);
+  min-height: 300px;
+  padding: 2.5rem 1.8rem;
+  border-radius: 14px;
+  background: linear-gradient(160deg, #fff2f4, #f7d4de);
+  color: #5b2a3c;
+  box-shadow: 0 0 50px rgba(243, 166, 189, 0.3);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.card-text { position: relative; z-index: 2; display: grid; gap: 1rem; font-size: 1.25rem; line-height: 1.5; }
+.card-text p:first-child { font-size: 1.9rem; font-style: italic; }
+
+.kiss {
+  position: absolute;
+  transform: translate(-50%, -50%) rotate(var(--rot));
+  animation: pop 0.45s cubic-bezier(0.2, 1.6, 0.4, 1) both;
+  z-index: 1;
+  opacity: 0.85;
+}
+@keyframes pop { from { transform: translate(-50%, -50%) rotate(var(--rot)) scale(0); } to { transform: translate(-50%, -50%) rotate(var(--rot)) scale(1); } }
+
+.final-line { max-width: 30ch; }

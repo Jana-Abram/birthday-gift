@@ -1,0 +1,37 @@
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  animation: drift 240s linear infinite;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--star);
+  opacity: var(--o);
+  box-shadow: 0 0 6px rgba(255, 246, 224, 0.7);
+  animation: twinkle ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: var(--o); transform: scale(1); }
+  50% { opacity: 0.1; transform: scale(0.6); }
+}
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* "Flying through the stars": the whole sky rushes outward from the centre */
+.starfield.flying {
+  animation: warp 1.8s cubic-bezier(0.5, 0, 0.3, 1);
+}
+
+@keyframes warp {
+  0% { transform: scale(1); }
+  55% { transform: scale(4.5); filter: blur(0.6px); }
+  100% { transform: scale(1); filter: none; }
+}

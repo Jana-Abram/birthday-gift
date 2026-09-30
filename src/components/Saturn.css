@@ -1,0 +1,31 @@
+.stage {
+  position: relative;
+  width: min(92vw, 520px);
+  height: clamp(180px, 40vw, 280px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.saturn { width: clamp(150px, 38vw, 240px); filter: drop-shadow(0 0 30px rgba(232, 201, 138, 0.25)); }
+
+.passing-moon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: clamp(110px, 28vw, 180px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #fbf7e8, var(--moon) 55%, #b9b39c);
+  box-shadow: 0 0 40px rgba(236, 230, 210, 0.3);
+  transform: translate(-150%, -50%);
+  opacity: 0;
+}
+.passing-moon.go { animation: pass 14s ease-in-out 0.8s forwards; }
+
+@keyframes pass {
+  0% { transform: translate(-150%, -50%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translate(400%, -50%); opacity: 0; }
+}
