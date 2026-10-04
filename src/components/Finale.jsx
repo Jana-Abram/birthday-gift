@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react'
 import useInView from '../hooks/useInView'
 import BirthdayMessage from './BirthdayMessage'
+import Wish from './wish.jsx'
 import './Finale.css'
 
 export default function Finale() {
   const [ref, seen] = useInView(0.5)
   const [step, setStep] = useState(0)
-  const [opened, setOpened] = useState(false)
+  const [stage, setStage] = useState('intro') // intro → wish → card
 
   // timed reveal: each line appears after a pause
   useEffect(() => {
@@ -18,28 +19,29 @@ export default function Finale() {
 
   return (
     <section className="screen finale" id="finale" ref={ref}>
-      {!opened ? (
+
+      {stage === 'intro' && (
         <>
           <div className="lines">
-            {step >= 1 && <p className="title fade-in big">Twenty-five trips around the sun since that night...
-and you're still shining.</p>}
+            {step >= 1 && <p className="title fade-in big">Twenty-five trips around the sun since that night... and you&rsquo;re still shining.</p>}
             {step >= 3 && <p className="text fade-in"><em>And I&rsquo;m really glad you are.</em> 🥹</p>}
           </div>
 
           {step >= 4 && (
             <div className="fade-in bottom">
-              <p className="title">HAPPY 25TH</p>
+              <p className="title happy">HAPPY 25TH</p>
               <p className="heart">♡</p>
               <p className="small">— from me</p>
-              <button className="link-btn" onClick={() => setOpened(true)}>
+              <button className="link-btn" onClick={() => setStage('wish')}>
                 one last thing →
               </button>
             </div>
           )}
         </>
-      ) : (
-        <BirthdayMessage />
       )}
+
+      {stage === 'wish' && <Wish onDone={() => setStage('card')} />}
+      {stage === 'card' && <BirthdayMessage />}
     </section>
   )
 }

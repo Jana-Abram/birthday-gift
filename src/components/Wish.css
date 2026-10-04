@@ -1,0 +1,46 @@
+.wish {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  min-height: 300px;
+  justify-content: center;
+}
+
+.wish-star {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 3.5rem;
+  color: var(--gold);
+  text-shadow: 0 0 20px var(--gold), 0 0 50px rgba(232, 201, 138, 0.5);
+  animation: wishPulse 2.4s ease-in-out infinite;
+}
+.wish-star:focus-visible { outline: 1px solid var(--gold); outline-offset: 8px; border-radius: 50%; }
+
+@keyframes wishPulse {
+  0%, 100% { transform: scale(1); opacity: 0.85; }
+  50% { transform: scale(1.18); opacity: 1; }
+}
+
+/* падающая звезда: летит вниз-влево */
+.shooting {
+  position: absolute;
+  top: 18%;
+  right: 12%;
+  width: 150px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(270deg, var(--star), transparent);
+  box-shadow: 0 0 10px var(--star);
+  opacity: 0;
+  animation: shoot 1.6s ease-in forwards;
+}
+@keyframes shoot {
+  from { transform: rotate(-35deg) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  to { transform: rotate(-35deg) translateX(-900px); opacity: 0; }
+}
+
+/* текст и кнопка появляются после того, как звезда пролетела */
+.wish .late { animation-delay: 1.8s; }
