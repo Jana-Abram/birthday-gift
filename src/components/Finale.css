@@ -1,9 +1,36 @@
+
+
 .finale {
-  /* the sky goes almost black, only the stars stay */
+  /* небо почти чёрное, остаются только звёзды */
   background: linear-gradient(to bottom, transparent, rgba(2, 3, 8, 0.88) 25%);
   min-height: 110svh;
 }
-.lines { display: grid; gap: 1.8rem; min-height: 220px; align-content: center; }
-.big { font-size: clamp(1.8rem, 6vw, 3.2rem); letter-spacing: 0.15em; }
-.bottom { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 2rem; }
-.heart { color: var(--rose); font-size: 2rem; }
+
+.finale .lines {
+  display: grid;
+  gap: 1.4rem;
+  min-height: 200px;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+}
+
+/* «.finale» впереди повышает приоритет, чтобы index.css не перебивал */
+.finale .big {
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  max-width: 24ch;
+}
+
+.finale .text {
+  font-size: clamp(1.05rem, 2.8vw, 1.35rem);
+}
+
+.finale .happy {
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  letter-spacing: 0.18em;
+}
+
+.bottom { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; margin-top: 2rem; }
+.heart { color: var(--rose); font-size: 1.6rem; }
