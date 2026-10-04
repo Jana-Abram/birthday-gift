@@ -11,7 +11,7 @@ export default function Intro({ onExplore }) {
       <div className="intro-main fade-in">
         <div className="spark">✦</div>
         <h1 className="title">
-          THE NIGHT<br />YOU ARRIVED
+          A GLIMPSE<br />OF YOUR SKY
         </h1>
         <p className="small">07.10.2001</p>
         <p className="text">
