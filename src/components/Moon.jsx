@@ -40,7 +40,7 @@ export default function Moon() {
       <h2 className="title small-title">The Moon</h2>
       <p className="text">That night, the Moon was already telling a story.</p>
       <p className="text">
-        On October 7, 2001, the Moon was in its waning gibbous phase &mdash; just a few days past the full moon.
+        The Moon was almost full that night. &mdash; Seems like even she wanted a good view.
       </p>
 
       {!closer && (
